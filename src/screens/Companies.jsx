@@ -1,5 +1,5 @@
 import React, { memo, useState } from "react";
-import { FlatList, View, Text, Image, StyleSheet } from "react-native";
+import { FlatList, SafeAreaView, View, Text, Image, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { firestore } from "../services/firebase";
 
@@ -17,8 +17,7 @@ const Companies = ({navigation}) => {
     setCompanies(listData);
   });
   return (
-    <View>
-      <Text style={styles.titleCompanies}>Empresas</Text>
+    <SafeAreaView>
       <FlatList
         data={companies}
         renderItem={({ item }) => (
@@ -37,7 +36,7 @@ const Companies = ({navigation}) => {
           </TouchableOpacity>
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
