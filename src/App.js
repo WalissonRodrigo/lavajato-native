@@ -1,27 +1,19 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, StatusBar, ScrollView } from "react-native";
-import Users from "./components/Users";
-import Companies from "./components/Companies";
+import { StyleSheet, SafeAreaView } from "react-native";
+import { Provider } from "react-native-paper";
+import { theme } from "./core/theme";
+import Routes from "./routes";
 
 export default function App() {
   return (
-    <ScrollView>
-      <SafeAreaView style={styles.container}>
-        <StatusBar style="auto" />
-        <Users />
-        <Companies />
-      </SafeAreaView>
-    </ScrollView>
+      <Provider theme={theme}>
+        <Routes />
+      </Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "stretch",
-    justifyContent: "center",
-    alignContent: "center",
-    padding: 4
   },
 });
